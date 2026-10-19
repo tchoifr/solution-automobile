@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Solution Automobile – Site vitrine et gestion de parc pour garages, 50 € HT/mois</title>
+  <meta name="description" content="Un site vitrine à votre enseigne et un dashboard de gestion de parc automobile : stock, rendez-vous, ventes, dépenses et équipe. 50 € HT par mois, sans frais d'installation.">
+  <meta name="theme-color" content="#0f6b78">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:title" content="Solution Automobile – Votre site et toute votre gestion dans un seul outil">
+  <meta property="og:description" content="Site vitrine, catalogue, gestion du stock, rendez-vous, ventes et dépenses. 50 € HT/mois, sans frais d'installation.">
+  <meta property="og:image" content="assets/img/dash-accueil.webp">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap">
+  <link rel="stylesheet" href="styles.css">
+  <script>document.documentElement.classList.add('js');</script>
+</head>
+
+<body>
+  <!-- Icônes -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+      <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></symbol>
+      <symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></symbol>
+      <symbol id="i-car" viewBox="0 0 24 24"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2"/><circle cx="7" cy="17" r="2"/><path d="M9 17h6"/><circle cx="17" cy="17" r="2"/></symbol>
+      <symbol id="i-clipboard" viewBox="0 0 24 24"><rect x="8" y="2" width="8" height="4" rx="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="m9 14 2 2 4-4"/></symbol>
+      <symbol id="i-users" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></symbol>
+      <symbol id="i-euro" viewBox="0 0 24 24"><path d="M4 10h12M4 14h9"/><path d="M19 6a7.7 7.7 0 0 0-5.2-2A7.9 7.9 0 0 0 6 12c0 4.4 3.5 8 7.8 8 2 0 3.8-.8 5.2-2"/></symbol>
+      <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20M2 12h20"/></symbol>
+      <symbol id="i-phone" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></symbol>
+      <symbol id="i-mail" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></symbol>
+      <symbol id="i-shield" viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></symbol>
+      <symbol id="i-bell" viewBox="0 0 24 24"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></symbol>
+      <symbol id="i-dashboard" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="9" rx="1"/><rect x="14" y="3" width="7" height="5" rx="1"/><rect x="14" y="12" width="7" height="9" rx="1"/><rect x="3" y="16" width="7" height="5" rx="1"/></symbol>
+      <symbol id="i-image" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.09-3.09a2 2 0 0 0-2.82 0L6 21"/></symbol>
+      <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></symbol>
+      <symbol id="i-key" viewBox="0 0 24 24"><circle cx="7.5" cy="15.5" r="5.5"/><path d="m21 2-9.6 9.6M15.5 7.5l3 3L22 7l-3-3"/></symbol>
+      <symbol id="i-chart" viewBox="0 0 24 24"><path d="M3 3v18h18"/><path d="M18 17V9M13 17V5M8 17v-3"/></symbol>
+      <symbol id="i-megaphone" viewBox="0 0 24 24"><path d="m3 11 18-5v12L3 14v-3z"/><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/></symbol>
+      <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></symbol>
+      <symbol id="i-file" viewBox="0 0 24 24"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4M10 9H8M16 13H8M16 17H8"/></symbol>
+      <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></symbol>
+      <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></symbol>
+      <symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></symbol>
+      <symbol id="i-external" viewBox="0 0 24 24"><path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></symbol>
+      <symbol id="i-phone-device" viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/></symbol>
+      <symbol id="i-inbox" viewBox="0 0 24 24"><path d="M22 12h-6l-2 3h-4l-2-3H2"/><path d="M5.45 5.11 2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"/></symbol>
+      <symbol id="i-pin" viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></symbol>
+      <symbol id="i-history" viewBox="0 0 24 24"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/><path d="M12 7v5l4 2"/></symbol>
+      <symbol id="i-server" viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14a9 3 0 0 0 18 0V5"/><path d="M3 12a9 3 0 0 0 18 0"/></symbol>
+      <symbol id="i-lock" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></symbol>
+      <symbol id="i-wrench" viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></symbol>
+      <symbol id="i-refresh" viewBox="0 0 24 24"><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/><path d="M3 21v-5h5"/><path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/></symbol>
+      <symbol id="i-minus" viewBox="0 0 24 24"><path d="M5 12h14"/></symbol>
+      <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+      <symbol id="i-zoom" viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></symbol>
+    </defs>
+  </svg>
+
+  <a class="skip" href="#contenu">Aller au contenu</a>
+
+  <!-- En-tête -->
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <a class="brand" href="#top" aria-label="Solution Automobile, retour en haut">
+        <img src="assets/favicon.svg" width="40" height="40" alt="">
+        <span class="brand__name">Solution<strong>Automobile</strong><small>Site vitrine + gestion de parc</small></span>
+      </a>
+      <nav class="nav" id="nav" aria-label="Navigation principale">
+        <a href="#site">Site vitrine</a>
+        <a href="#dashboard">Gestion de parc</a>
+        <a href="#reference">Démo</a>
+        <a href="#tarif">Tarif</a>
+        <a href="#faq">Questions</a>
+        <a class="btn btn--primary nav__cta" href="#contact">Demander mon site</a>
+      </nav>
+      <div class="header__actions">
+        <a class="btn btn--primary header__cta" href="#contact">Demander mon site</a>
+        <button class="burger" id="burger" type="button" aria-expanded="false" aria-controls="nav" aria-label="Ouvrir le menu">
+          <svg class="i"><use href="#i-menu"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="contenu">
+    <!-- Hero -->
+    <section class="hero" id="top">
+      <div class="container hero__grid">
+        <div class="hero__copy reveal">
+          <p class="eyebrow eyebrow--dark"><span class="dot"></span>Garages indépendants · négociants · véhicules d'occasion</p>
+          <h1>Votre site automobile et <em>toute votre gestion</em> réunis dans un seul outil.</h1>
+          <p class="lead">Un site vitrine à votre enseigne, un stock centralisé et une gestion simplifiée de vos rendez-vous, ventes et dépenses.</p>
+          <div class="hero__price">
+            <strong>50 € <small>HT / mois</small></strong>
+            <span>Sans frais d'installation<br>ni frais de création de site</span>
+          </div>
+          <div class="hero__ctas">
+            <a class="btn btn--primary btn--lg" href="https://tchoifr.github.io/Livradois-auto/admin/?demo=1" target="_blank" rel="noopener">
+              <svg class="i"><use href="#i-eye"/></svg>Essayer le dashboard
+            </a>
+            <a class="btn btn--glass btn--lg" href="#tarif">Voir l'offre<svg class="i"><use href="#i-arrow"/></svg></a>
+          </div>
+          <ul class="hero__chips">
+            <li><svg class="i"><use href="#i-check"/></svg>Site + dashboard inclus</li>
+            <li><svg class="i"><use href="#i-check"/></svg>Une seule formule</li>
+            <li><svg class="i"><use href="#i-check"/></svg>Mise en ligne par nos soins</li>
+          </ul>
+        </div>
+
+        <div class="hero__visual reveal reveal--late">
+          <figure class="browser browser--hero">
+            <div class="browser__bar" aria-hidden="true"><i></i><i></i><i></i><span>votre-garage.fr/admin</span></div>
+            <img src="assets/img/dash-accueil.webp" width="1600" height="1000" alt="Tableau de bord : rendez-vous du jour, véhicules en stock, réservés, en préparation, demandes du site et reste à encaisser">
+          </figure>
+          <figure class="phone phone--hero">
+            <img src="assets/img/site-mobile.webp" width="640" height="1385" alt="Site vitrine d'un garage affiché sur mobile">
+          </figure>
+          <div class="float-chip float-chip--a" aria-hidden="true">
+            <span class="float-chip__icon"><svg class="i"><use href="#i-inbox"/></svg></span>
+            <span><strong>Nouvelle demande du site</strong>Essai · Peugeot 2008</span>
+          </div>
+          <div class="float-chip float-chip--b" aria-hidden="true">
+            <span class="float-chip__icon float-chip__icon--ok"><svg class="i"><use href="#i-bell"/></svg></span>
+            <span><strong>Rappel envoyé au client</strong>Rendez-vous demain · 10h30</span>
+          </div>
+          <p class="hero__caption">Exemple réel : Livradois Automobiles · données de démonstration</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Fonctionnement -->
+    <section class="section flow" aria-labelledby="flow-title">
+      <div class="container">
+        <div class="section__head reveal">
+          <p class="eyebrow">Fini les doubles saisies</p>
+          <h2 id="flow-title">Vous saisissez une fois. Tout le reste suit.</h2>
+          <p>Le site vitrine est alimenté par votre dashboard : vos véhicules, vos demandes et vos rendez-vous vivent au même endroit.</p>
+        </div>
+        <ol class="flow__steps">
+          <li class="flow__step reveal">
+            <span class="flow__num">1</span>
+            <svg class="i i--xl"><use href="#i-car"/></svg>
+            <h3>Vous ajoutez un véhicule</h3>
+            <p>Photos, caractéristiques, prix et statut, depuis le dashboard.</p>
+          </li>
+          <li class="flow__step reveal">
+            <span class="flow__num">2</span>
+            <svg class="i i--xl"><use href="#i-globe"/></svg>
+            <h3>Il apparaît sur votre site</h3>
+            <p>Dans le catalogue, avec sa fiche détaillée et vos boutons de contact.</p>
+          </li>
+          <li class="flow__step reveal">
+            <span class="flow__num">3</span>
+            <svg class="i i--xl"><use href="#i-inbox"/></svg>
+            <h3>Les demandes arrivent</h3>
+            <p>Réservation, essai, offre ou contact : rattachés au client et au véhicule.</p>
+          </li>
+          <li class="flow__step reveal">
+            <span class="flow__num">4</span>
+            <svg class="i i--xl"><use href="#i-key"/></svg>
+            <h3>Vous suivez jusqu'à la vente</h3>
+            <p>Rendez-vous, préparation, paiements et historique, sans ressaisie.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- Site vitrine -->
+    <section class="section section--sand" id="site" aria-labelledby="site-title">
+      <div class="container split">
+        <div class="split__copy reveal">
+          <p class="eyebrow"><svg class="i"><use href="#i-globe"/></svg>Le site vitrine</p>
+          <h2 id="site-title">Un site professionnel à votre enseigne, qui vend vos véhicules.</h2>
+          <p>Votre logo, vos couleurs, vos coordonnées. Le catalogue se met à jour tout seul à partir de votre stock : un véhicule vendu disparaît, un nouveau arrive en ligne.</p>
+          <ul class="checks checks--2">
+            <li><svg class="i"><use href="#i-check"/></svg>Présentation de l'entreprise</li>
+            <li><svg class="i"><use href="#i-check"/></svg>Coordonnées et horaires</li>
+            <li><svg class="i"><use href="#i-check"/></svg>Présentation des services</li>
+            <li><svg class="i"><use href="#i-check"/></svg>Catalogue de véhicules</li>
+            <li><svg class="i"><use href="#i-check"/></svg>Fiches détaillées et photos</li>
+            <li><svg class="i"><use href="#i-check"/></svg>Formulaires de contact</li>
+            <li><svg class="i"><use href="#i-check"/></svg>Boutons d'appel direct</li>
+            <li><svg class="i"><use href="#i-check"/></svg>Adapté mobile et tablette</li>
+            <li><svg class="i"><use href="#i-check"/></svg>Référencement technique de base</li>
+            <li><svg class="i"><use href="#i-check"/></svg>Hébergé et maintenu</li>
+          </ul>
+          <p class="note">La personnalisation porte sur votre identité visuelle et les éléments prévus par le produit. Un design entièrement sur mesure ou des fonctionnalités spécifiques font l'objet d'un devis.</p>
+        </div>
+
+        <div class="gallery reveal reveal--late">
+          <div class="gallery__stage">
+            <figure class="browser">
+              <div class="browser__bar" aria-hidden="true"><i></i><i></i><i></i><span id="gallery-url">votre-garage.fr</span></div>
+              <button class="zoomable" type="button" data-zoom aria-label="Agrandir la capture">
+                <img id="gallery-img" src="assets/img/site-accueil.webp" width="1600" height="1000" alt="Page d'accueil du site vitrine d'un garage">
+              </button>
+            </figure>
+            <figure class="phone phone--gallery">
+              <img src="assets/img/site-mobile-catalogue.webp" width="640" height="1385" alt="Catalogue de véhicules sur mobile" loading="lazy">
+            </figure>
+          </div>
+          <div class="gallery__thumbs" role="tablist" aria-label="Pages du site vitrine">
+            <button class="thumb is-active" type="button" role="tab" aria-selected="true" data-src="assets/img/site-accueil.webp" data-url="votre-garage.fr" data-alt="Page d'accueil du site vitrine d'un garage">
+              <svg class="i"><use href="#i-globe"/></svg>Accueil
+            </button>
+            <button class="thumb" type="button" role="tab" aria-selected="false" data-src="assets/img/site-catalogue.webp" data-url="votre-garage.fr/vehicules" data-alt="Catalogue de véhicules d'occasion avec filtres par marque et carrosserie">
+              <svg class="i"><use href="#i-search"/></svg>Catalogue
+            </button>
+            <button class="thumb" type="button" role="tab" aria-selected="false" data-src="assets/img/site-fiche.webp" data-url="votre-garage.fr/vehicule" data-alt="Fiche véhicule avec photos, prix, caractéristiques et boutons de réservation, d'offre et d'appel">
+              <svg class="i"><use href="#i-file"/></svg>Fiche véhicule
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Dashboard -->
+    <section class="section section--dark" id="dashboard" aria-labelledby="dash-title">
+      <div class="container">
+        <div class="section__head section__head--dark reveal">
+          <p class="eyebrow eyebrow--dark"><svg class="i"><use href="#i-dashboard"/></svg>Le gestionnaire de parc</p>
+          <h2 id="dash-title">Toute votre activité, pilotée depuis un seul dashboard.</h2>
+          <p>Stock, planning, préparation, clients, ventes et équipe : les opérations courantes sont centralisées et accessibles depuis un ordinateur, une tablette ou un téléphone.</p>
+        </div>
+
+        <div class="tabs reveal">
+          <div class="tabs__list" role="tablist" aria-label="Fonctionnalités du dashboard">
+            <button class="tab is-active" type="button" role="tab" id="tab-1" aria-controls="panel-1" aria-selected="true"><svg class="i"><use href="#i-dashboard"/></svg><span>Vue d'ensemble</span></button>
+            <button class="tab" type="button" role="tab" id="tab-2" aria-controls="panel-2" aria-selected="false" tabindex="-1"><svg class="i"><use href="#i-calendar"/></svg><span>Rendez-vous</span></button>
+            <button class="tab" type="button" role="tab" id="tab-3" aria-controls="panel-3" aria-selected="false" tabindex="-1"><svg class="i"><use href="#i-car"/></svg><span>Véhicules</span></button>
+            <button class="tab" type="button" role="tab" id="tab-4" aria-controls="panel-4" aria-selected="false" tabindex="-1"><svg class="i"><use href="#i-clipboard"/></svg><span>Préparation</span></button>
+            <button class="tab" type="button" role="tab" id="tab-5" aria-controls="panel-5" aria-selected="false" tabindex="-1"><svg class="i"><use href="#i-users"/></svg><span>Clients</span></button>
+            <button class="tab" type="button" role="tab" id="tab-6" aria-controls="panel-6" aria-selected="false" tabindex="-1"><svg class="i"><use href="#i-euro"/></svg><span>Ventes & dépenses</span></button>
+            <button class="tab" type="button" role="tab" id="tab-7" aria-controls="panel-7" aria-selected="false" tabindex="-1"><svg class="i"><use href="#i-key"/></svg><span>Équipe & accès</span></button>
+          </div>
+
+          <div class="tabs__panels">
+            <div class="panel is-active" role="tabpanel" id="panel-1" aria-labelledby="tab-1">
+              <div class="panel__copy">
+                <h3>Votre journée en un coup d'œil</h3>
+                <p>Dès l'ouverture, vous voyez ce qui compte : les rendez-vous du jour, les véhicules à préparer, les nouvelles demandes et l'argent restant à encaisser.</p>
+                <ul class="checks checks--dark">
+                  <li><svg class="i"><use href="#i-check"/></svg>Indicateurs : stock, réservés, vendus, en préparation</li>
+                  <li><svg class="i"><use href="#i-check"/></svg>Liste « À faire » du jour et du lendemain</li>
+                  <li><svg class="i"><use href="#i-check"/></svg>Alertes : demandes à traiter, contrôles techniques, préparations</li>
+                  <li><svg class="i"><use href="#i-check"/></svg>Accès rapide : nouveau véhicule, dépense, vente</li>
+                </ul>
+              </div>
+              <button class="browser browser--panel zoomable" type="button" data-zoom aria-label="Agrandir la capture">
+                <img src="assets/img/dash-accueil.webp" width="1600" height="1000" alt="Tableau de bord avec indicateurs, liste des tâches du jour et alertes" loading="lazy">
+              </button>
+            </div>
+
+            <div class="panel" role="tabpanel" id="panel-2" aria-labelledby="tab-2" hidden>
+              <div class="panel__copy">
+                <h3>Un planning clair, sans double réservation</h3>
+                <p>Planifiez visites, essais et livraisons. Déplacez un rendez-vous d'un glisser-déposer et suivez son statut jusqu'à la clôture.</p>
+                <ul class="checks checks--dark">
+                  <li><svg class="i"><use href="#i-check"/></svg>Vues jour, semaine, mois et liste</li>
+                  <li><svg class="i"><use href="#i-check"/></svg>Un véhicule ne peut pas être réservé deux fois sur le même créneau</li>
+                  <li><svg class="i"><use href="#i-check"/></svg>Statuts : confirmé, en attente, terminé, client absent</li>
+                  <li><svg class="i"><use href="#i-check"/></svg>Confirmation et rappels par e-mail (24 h et 2 h avant)</li>
+                </ul>
+              </div>
+              <button class="browser browser--panel zoomable" type="button" data-zoom aria-label="Agrandir la capture">
+                <img src="assets/img/dash-planning.webp" width="1600" height="1000" alt="Planning hebdomadaire des rendez-vous avec légende des statuts" loading="lazy">
+              </button>
+            </div>
+
+            <div class="panel" role="tabpanel" id="panel-3" aria-labelledby="tab-3" hidden>
+              <div class="panel__copy">
+                <h3>Votre stock, toujours à jour</h3>
+                <p>Créez et modifiez vos fiches véhicules : elles alimentent directement votre site. Changez un statut, il est en ligne ou retiré aussitôt.</p>
+                <ul class="checks checks--dark">
+                  <li><svg class="i"><use href="#i-check"/></svg>Photos, caractéristiques, prix et prix barré</li>
+                  <li><svg class="i"><use href="#i-check"/></svg>N° de stock, immatriculation, VIN, emplacement</li>
+                  <li><svg class="i"><use href="#i-check"/></svg>Statuts : brouillon, en ligne, réservé, vendu, retiré</li>
+                  <li><svg class="i"><use href="#i-check"/></svg>Recherche et filtres instantanés</li>
+                </ul>
+              </div>
+              <button class="browser browser--panel zoomable" type="button" data-zoom aria-label="Agrandir la capture">
+                <img src="assets/img/dash-vehicules.webp" width="1600" height="1000" alt="Liste des véhicules en stock avec parc, prix, statut, avancement de la préparation et contrôle technique" loading="lazy">
+              </button>
+            </div>
+
+            <div class="panel" role="tabpanel" id="panel-4" aria-labelledby="tab-4" hidden>
+              <div class="panel__copy">
+                <h3>Des véhicules prêts pour chaque rendez-vous</h3>
+                <p>Chaque véhicule a sa checklist de préparation. Les rendez-vous à venir vous indiquent ce qui reste à faire, et les échéances de contrôle technique sont surveillées.</p>
+                <ul class="checks checks--dark">
+                  <li><svg class="i"><use href="#i-check"/></svg>Nettoyage, photos, documents, vérifications administratives</li>
+                  <li><svg class="i"><use href="#i-check"/></svg>Rendez-vous des 7 prochains jours à préparer</li>
+                  <li><svg class="i"><use href="#i-check"/></svg>Alertes avant l'échéance du contrôle technique</li>
+                  <li><svg class="i"><use href="#i-check"/></svg>Documents privés rangés avec le véhicule</li>
+                </ul>
+              </div>
+              <button class="browser browser--panel zoomable" type="button" data-zoom aria-label="Agrandir la capture">
+                <img src="assets/img/dash-preparation.webp" width="1600" height="1000" alt="Préparation des véhicules : rendez-vous à préparer et contrôles techniques à surveiller" loading="lazy">
+              </button>
+            </div>
+
+            <div class="panel" role="tabpanel" id="panel-5" aria-labelledby="tab-5" hidden>
+              <div class="panel__copy">
+                <h3>Clients et demandes, au même endroit</h3>
+                <p>Les demandes envoyées depuis votre site arrivent dans le dashboard et sont rattachées à la bonne fiche client, après votre validation.</p>
+                <ul class="checks checks--dark">
+                  <li><svg class="i"><use href="#i-check"/></svg>Fiches clients et historique de contact</li>
+                  <li><svg class="i"><use href="#i-check"/></svg>Moyen de contact préféré de chaque client</li>
+                  <li><svg class="i"><use href="#i-check"/></svg>Demandes de réservation, d'essai et offres de prix</li>
+                  <li><svg class="i"><use href="#i-check"/></svg>Suivi des messages envoyés</li>
+                </ul>
+              </div>
+              <button class="browser browser--panel zoomable" type="button" data-zoom aria-label="Agrandir la capture">
+                <img src="assets/img/dash-clients.webp" width="1600" height="1000" alt="Liste des clients avec téléphone, e-mail et moyen de contact préféré" loading="lazy">
+              </button>
+            </div>
+
+            <div class="panel" role="tabpanel" id="panel-6" aria-labelledby="tab-6" hidden>
+              <div class="panel__copy">
+                <h3>Ventes, paiements et dépenses suivis</h3>
+                <p>Suivez chaque vente de la réservation à la livraison, enregistrez vos dépenses et consultez vos indicateurs financiers.</p>
+                <ul class="checks checks--dark">
+                  <li><svg class="i"><use href="#i-check"/></svg>Réservation, vente en cours, finalisée, livrée</li>
+                  <li><svg class="i"><use href="#i-check"/></svg>Acomptes, paiements et reste à encaisser</li>
+                  <li><svg class="i"><use href="#i-check"/></svg>Coûts par véhicule et marge estimée</li>
+                  <li><svg class="i"><use href="#i-check"/></svg>Rapports et export CSV</li>
+                </ul>
+                <p class="note note--dark">Des indicateurs de gestion, pas une comptabilité : le dashboard ne remplace pas votre logiciel comptable ni vos déclarations fiscales.</p>
+              </div>
+              <button class="browser browser--panel zoomable" type="button" data-zoom aria-label="Agrandir la capture">
+                <img src="assets/img/dash-ventes.webp" width="1600" height="1000" alt="Suivi des ventes avec prix final, montant encaissé, reste à encaisser et marge estimée" loading="lazy">
+              </button>
+            </div>
+
+            <div class="panel" role="tabpanel" id="panel-7" aria-labelledby="tab-7" hidden>
+              <div class="panel__copy">
+                <h3>Chacun accède à ce dont il a besoin</h3>
+                <p>Le gérant garde la main sur tout. Une secrétaire peut gérer le planning, les clients et la préparation, sans voir les finances.</p>
+                <ul class="checks checks--dark">
+                  <li><svg class="i"><use href="#i-check"/></svg>Un compte nominatif par personne</li>
+                  <li><svg class="i"><use href="#i-check"/></svg>Rôles : propriétaire, secrétaire référente, secrétaire</li>
+                  <li><svg class="i"><use href="#i-check"/></svg>Droits vérifiés par le serveur à chaque action</li>
+                  <li><svg class="i"><use href="#i-check"/></svg>Journal d'audit : chaque action est tracée</li>
+                </ul>
+              </div>
+              <button class="browser browser--panel zoomable" type="button" data-zoom aria-label="Agrandir la capture">
+                <img src="assets/img/dash-equipe.webp" width="1600" height="1000" alt="Gestion de l'équipe : comptes, rôles et tableau des droits par rôle" loading="lazy">
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Cycle de vente -->
+    <section class="section cycle" aria-labelledby="cycle-title">
+      <div class="container">
+        <div class="section__head reveal">
+          <p class="eyebrow">Le cycle commercial</p>
+          <h2 id="cycle-title">Chaque véhicule suivi de l'arrivée à la vente.</h2>
+        </div>
+        <ol class="cycle__track reveal">
+          <li><span class="cycle__dot"><svg class="i"><use href="#i-car"/></svg></span><strong>Disponible</strong><small>En ligne sur votre site</small></li>
+          <li><span class="cycle__dot"><svg class="i"><use href="#i-calendar"/></svg></span><strong>Rendez-vous ou essai</strong><small>Planifié, préparé, rappelé</small></li>
+          <li><span class="cycle__dot"><svg class="i"><use href="#i-file"/></svg></span><strong>Vente en cours</strong><small>Réservation et acomptes</small></li>
+          <li><span class="cycle__dot"><svg class="i"><use href="#i-key"/></svg></span><strong>Vendu</strong><small>Retiré du catalogue</small></li>
+          <li><span class="cycle__dot"><svg class="i"><use href="#i-history"/></svg></span><strong>Historique</strong><small>Toutes les opérations gardées</small></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- Référence -->
+    <section class="section section--sand" id="reference" aria-labelledby="ref-title">
+      <div class="container">
+        <div class="ref reveal">
+          <div class="ref__media">
+            <figure class="browser">
+              <div class="browser__bar" aria-hidden="true"><i></i><i></i><i></i><span>Livradois Automobiles</span></div>
+              <img src="assets/img/site-catalogue.webp" width="1600" height="1000" alt="Catalogue en ligne de Livradois Automobiles" loading="lazy">
+            </figure>
+          </div>
+          <div class="ref__copy">
+            <p class="eyebrow"><svg class="i"><use href="#i-pin"/></svg>Déjà en service</p>
+            <h2 id="ref-title">Livradois Automobiles, garage à Arlanc (63)</h2>
+            <p>Réparation, entretien et vente de véhicules d'occasion. Leur site vitrine, leur catalogue et toute leur gestion (planning, préparation, clients et ventes) tournent sur la même plateforme.</p>
+            <p>Voyez le résultat par vous-même : le site public, puis le dashboard avec des données fictives. Choisissez un profil (propriétaire ou secrétaire) pour découvrir les droits de chacun.</p>
+            <div class="ref__ctas">
+              <a class="btn btn--primary" href="https://tchoifr.github.io/Livradois-auto/admin/?demo=1" target="_blank" rel="noopener"><svg class="i"><use href="#i-dashboard"/></svg>Tester le dashboard</a>
+              <a class="btn btn--ghost" href="https://tchoifr.github.io/Livradois-auto/" target="_blank" rel="noopener"><svg class="i"><use href="#i-external"/></svg>Voir leur site</a>
+            </div>
+            <p class="note">Démonstration : base séparée, données fictives remises à zéro chaque jour.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Diffusion -->
+    <section class="section" aria-labelledby="diff-title">
+      <div class="container">
+        <div class="soon reveal">
+          <div class="soon__copy">
+            <span class="pill pill--soon"><svg class="i"><use href="#i-clock"/></svg>En préparation</span>
+            <h2 id="diff-title">Bientôt : diffusez vos annonces depuis votre stock.</h2>
+            <p>Nous préparons un module pour publier vos véhicules sur les grandes plateformes d'annonces directement depuis votre dashboard, sans ressaisie.</p>
+            <ul class="checks">
+              <li><svg class="i"><use href="#i-check"/></svg>Choix des véhicules et des plateformes</li>
+              <li><svg class="i"><use href="#i-check"/></svg>Contrôle des informations obligatoires</li>
+              <li><svg class="i"><use href="#i-check"/></svg>Suivi des statuts de diffusion et historique</li>
+              <li><svg class="i"><use href="#i-check"/></svg>Mise à jour et retrait de l'annonce à la vente, quand la plateforme le permet</li>
+            </ul>
+          </div>
+          <div class="soon__aside">
+            <div class="soon__hub" aria-hidden="true">
+              <span class="soon__core"><svg class="i"><use href="#i-car"/></svg>Votre stock</span>
+              <span class="soon__node soon__node--1">Le Bon Coin</span>
+              <span class="soon__node soon__node--2">La Centrale</span>
+              <span class="soon__node soon__node--3">Votre site</span>
+            </div>
+            <p class="soon__note"><strong>Même formule, sans abonnement en plus.</strong> Le module sera ajouté à l'offre unique dès que les intégrations seront validées techniquement et contractuellement. Les éventuels frais des plateformes partenaires restent distincts et vous seront annoncés avant toute souscription.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tarif -->
+    <section class="section section--sand" id="tarif" aria-labelledby="tarif-title">
+      <div class="container">
+        <div class="section__head reveal">
+          <p class="eyebrow"><svg class="i"><use href="#i-euro"/></svg>Tarif</p>
+          <h2 id="tarif-title">Une solution complète, sans frais d'installation.</h2>
+          <p><strong>50 € HT par mois. C'est tout pour votre logiciel.</strong> Pas de frais de création de site, pas de frais de mise en service : un abonnement simple et transparent.</p>
+        </div>
+
+        <div class="pricing">
+          <article class="price-card reveal">
+            <div class="price-card__top">
+              <span class="pill pill--light">Offre unique</span>
+              <span class="pill pill--zero">0 € d'installation</span>
+            </div>
+            <h3>Solution Automobile</h3>
+            <p class="price"><span class="price__amount">50 €</span><span class="price__unit">HT<br>/ mois</span></p>
+            <p class="price-card__sub">Tout le nécessaire pour présenter et gérer votre activité automobile.</p>
+            <ul class="checks checks--price">
+              <li><svg class="i"><use href="#i-check"/></svg>Site vitrine personnalisé</li>
+              <li><svg class="i"><use href="#i-check"/></svg>Catalogue et fiches véhicules</li>
+              <li><svg class="i"><use href="#i-check"/></svg>Dashboard de gestion du stock</li>
+              <li><svg class="i"><use href="#i-check"/></svg>Rendez-vous et suivi des clients</li>
+              <li><svg class="i"><use href="#i-check"/></svg>Suivi des ventes et des dépenses</li>
+              <li><svg class="i"><use href="#i-check"/></svg>Gestion des utilisateurs selon les fonctions disponibles</li>
+              <li><svg class="i"><use href="#i-check"/></svg>Maintenance et hébergement selon le périmètre contractuel</li>
+              <li><svg class="i"><use href="#i-check"/></svg>Évolutions du logiciel, dont la diffusion multicanale selon les modalités annoncées</li>
+            </ul>
+            <a class="btn btn--primary btn--lg btn--block" href="#contact">Demander mon site<svg class="i"><use href="#i-arrow"/></svg></a>
+            <div class="domain">
+              <svg class="i"><use href="#i-globe"/></svg>
+              <p><strong>Nom de domaine : à la charge du client.</strong> Vous payez uniquement sa réservation et son renouvellement, au tarif du prestataire choisi.</p>
+            </div>
+          </article>
+
+          <div class="pricing__side">
+            <div class="recap reveal">
+              <h3>Ce que vous payez</h3>
+              <table class="recap__table">
+                <tbody>
+                  <tr><th scope="row">Création du site</th><td class="is-zero">0 €</td></tr>
+                  <tr><th scope="row">Mise en service</th><td class="is-zero">0 €</td></tr>
+                  <tr><th scope="row">Abonnement logiciel</th><td>50 € HT / mois</td></tr>
+                  <tr><th scope="row">Nom de domaine</th><td>Tarif du prestataire</td></tr>
+                </tbody>
+                <tfoot>
+                  <tr><th scope="row">Sur 12 mois</th><td>600 € HT<small>hors nom de domaine</small></td></tr>
+                </tfoot>
+              </table>
+              <p class="note">Montants hors taxes. La TVA est appliquée selon le régime fiscal en vigueur.</p>
+            </div>
+
+            <div class="extras reveal">
+              <h3>Ce qui reste à part</h3>
+              <ul>
+                <li><svg class="i"><use href="#i-wrench"/></svg><span><strong>Sur devis</strong> : développements spécifiques, design entièrement sur mesure, migrations complexes, référencement avancé.</span></li>
+                <li><svg class="i"><use href="#i-phone-device"/></svg><span><strong>Services tiers payants</strong> : SMS ou frais de diffusion des annonces, précisés avant toute souscription.</span></li>
+                <li><svg class="i"><use href="#i-file"/></svg><span><strong>Non compris</strong> : comptabilité certifiée et déclarations fiscales.</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Démarrage -->
+    <section class="section" aria-labelledby="start-title">
+      <div class="container">
+        <div class="section__head reveal">
+          <p class="eyebrow">Démarrage</p>
+          <h2 id="start-title">On s'occupe de la mise en place. Vous ajoutez vos véhicules.</h2>
+          <p>La préparation de votre compte et de votre site est comprise dans l'abonnement.</p>
+        </div>
+        <ol class="steps">
+          <li class="step reveal">
+            <span class="step__num">01</span>
+            <h3>Vos informations</h3>
+            <p>Vous nous transmettez votre logo, vos coordonnées, vos horaires et vos services.</p>
+          </li>
+          <li class="step reveal">
+            <span class="step__num">02</span>
+            <h3>Configuration</h3>
+            <p>Nous configurons votre identité visuelle, votre site, votre catalogue et votre compte administrateur.</p>
+          </li>
+          <li class="step reveal">
+            <span class="step__num">03</span>
+            <h3>Prise en main</h3>
+            <p>Nous vous présentons les principales fonctionnalités et vérifions ensemble que tout fonctionne.</p>
+          </li>
+          <li class="step reveal">
+            <span class="step__num">04</span>
+            <h3>Mise en ligne</h3>
+            <p>Votre site est publié. Vous ajoutez vos véhicules et gérez vos rendez-vous, ventes et opérations.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section section--sand" id="faq" aria-labelledby="faq-title">
+      <div class="container faq">
+        <div class="faq__head reveal">
+          <p class="eyebrow">Questions fréquentes</p>
+          <h2 id="faq-title">Tout est clair avant de vous lancer.</h2>
+          <p>Une autre question ? <a href="#contact">Écrivez-nous</a>, nous vous répondons.</p>
+        </div>
+        <div class="faq__list reveal">
+          <details>
+            <summary>Y a-t-il des frais d'installation ou de création ?<svg class="i"><use href="#i-plus"/></svg></summary>
+            <p>Non. Aucun frais de création de site, d'installation ou de mise en service. Vous payez l'abonnement de 50 € HT par mois et, à part, votre nom de domaine.</p>
+          </details>
+          <details>
+            <summary>Qui s'occupe du nom de domaine ?<svg class="i"><use href="#i-plus"/></svg></summary>
+            <p>Le nom de domaine (par exemple <em>votre-garage.fr</em>) est à votre charge : vous payez sa réservation et son renouvellement au tarif du prestataire choisi. Si vous en avez déjà un, il peut être utilisé.</p>
+          </details>
+          <details>
+            <summary>Est-ce que je peux avoir mes couleurs et mon logo ?<svg class="i"><use href="#i-plus"/></svg></summary>
+            <p>Oui, le site est personnalisé à votre identité visuelle (logo, couleurs, textes, photos, coordonnées). Un design entièrement sur mesure ou des fonctionnalités spécifiques font l'objet d'un devis séparé.</p>
+          </details>
+          <details>
+            <summary>Les SMS de rappel sont-ils inclus ?<svg class="i"><use href="#i-plus"/></svg></summary>
+            <p>Les confirmations et rappels de rendez-vous partent par e-mail. L'envoi de SMS passe par un service tiers dont le coût est facturé séparément ; il vous est précisé avant toute souscription.</p>
+          </details>
+          <details>
+            <summary>Le dashboard remplace-t-il ma comptabilité ?<svg class="i"><use href="#i-plus"/></svg></summary>
+            <p>Non. Il calcule des indicateurs de gestion (ventes, encaissements, dépenses, marge estimée) et permet un export CSV, mais il ne remplace ni un logiciel comptable, ni une comptabilité certifiée, ni vos déclarations fiscales.</p>
+          </details>
+          <details>
+            <summary>Et la diffusion sur Le Bon Coin ou La Centrale ?<svg class="i"><use href="#i-plus"/></svg></summary>
+            <p>Ce module est en préparation. Il sera intégré à la formule unique, sans abonnement supplémentaire, dès que les intégrations seront validées. Les éventuels frais facturés par les plateformes restent distincts et vous seront annoncés clairement.</p>
+          </details>
+          <details>
+            <summary>Combien de personnes peuvent utiliser le dashboard ?<svg class="i"><use href="#i-plus"/></svg></summary>
+            <p>Le gérant dispose des droits d'administration et peut créer des accès pour son équipe selon les rôles disponibles (secrétaire référente, secrétaire). Le nombre d'utilisateurs, comme le nombre de véhicules, est précisé dans les conditions de l'offre avant souscription.</p>
+          </details>
+          <details>
+            <summary>J'ai plusieurs établissements, est-ce possible ?<svg class="i"><use href="#i-plus"/></svg></summary>
+            <p>La plateforme sait gérer plusieurs parcs. L'offre comprend un site vitrine par entreprise : les conditions pour plusieurs établissements sont étudiées et précisées avec vous avant souscription.</p>
+          </details>
+          <details>
+            <summary>Que couvrent l'hébergement et la maintenance ?<svg class="i"><use href="#i-plus"/></svg></summary>
+            <p>L'hébergement, les sauvegardes, les mises à jour et l'assistance sont assurés selon le périmètre défini dans les conditions contractuelles, qui précisent les délais de prise en charge et les modalités de contact du support.</p>
+          </details>
+          <details>
+            <summary>Mes données m'appartiennent-elles ?<svg class="i"><use href="#i-plus"/></svg></summary>
+            <p>Oui, les informations que vous fournissez restent les vôtres. Les conditions de restitution de vos données en fin de contrat, ainsi que les modalités de résiliation, sont détaillées dans le contrat.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="section section--dark contact" id="contact" aria-labelledby="contact-title">
+      <div class="container contact__grid">
+        <div class="contact__copy reveal">
+          <p class="eyebrow eyebrow--dark">Parlons de votre garage</p>
+          <h2 id="contact-title">Votre site et votre gestion, prêts sans frais d'installation.</h2>
+          <p>Dites-nous qui vous êtes : nous revenons vers vous pour une démonstration et la préparation de votre espace.</p>
+          <ul class="contact__points">
+            <li><svg class="i"><use href="#i-check"/></svg>50 € HT par mois, une seule formule</li>
+            <li><svg class="i"><use href="#i-check"/></svg>Mise en place comprise</li>
+            <li><svg class="i"><use href="#i-check"/></svg>Seul coût en plus : votre nom de domaine</li>
+          </ul>
+        </div>
+        <form class="form reveal reveal--late" id="contact-form" novalidate>
+          <div class="form__row">
+            <label class="field">Nom et prénom<input class="input" name="nom" autocomplete="name" required></label>
+            <label class="field">Entreprise<input class="input" name="entreprise" autocomplete="organization" required></label>
+          </div>
+          <div class="form__row">
+            <label class="field">Téléphone<input class="input" name="telephone" type="tel" autocomplete="tel" required></label>
+            <label class="field">E-mail<input class="input" name="email" type="email" autocomplete="email" required></label>
+          </div>
+          <div class="form__row">
+            <label class="field">Ville<input class="input" name="ville" autocomplete="address-level2"></label>
+            <label class="field">Activité
+              <select class="input" name="activite">
+                <option>Garage indépendant</option>
+                <option>Négociant automobile</option>
+                <option>Vente de véhicules d'occasion</option>
+                <option>Autre</option>
+              </select>
+            </label>
+          </div>
+          <label class="field">Votre message<textarea class="input" name="message" rows="4" placeholder="Votre activité, votre stock moyen, vos questions…"></textarea></label>
+          <p class="form__error" id="form-error" role="alert" hidden>Merci de remplir votre nom, votre entreprise, votre téléphone et un e-mail valide.</p>
+          <button class="btn btn--primary btn--lg btn--block" type="submit"><svg class="i"><use href="#i-mail"/></svg>Envoyer ma demande</button>
+          <p class="form__note">Votre logiciel de messagerie s'ouvre avec la demande pré-remplie.</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <img src="assets/favicon.svg" width="32" height="32" alt="">
+        <span>Solution<strong>Automobile</strong></span>
+      </div>
+      <p>Site vitrine et gestion de parc pour les professionnels de l'automobile.</p>
+      <p class="footer__legal">© <span id="year">2026</span> Solution Automobile · Tarifs hors taxes.</p>
+    </div>
+  </footer>
+
+  <!-- Agrandissement des captures -->
+  <dialog class="lightbox" id="lightbox" aria-label="Capture agrandie">
+    <button class="lightbox__close" type="button" aria-label="Fermer"><svg class="i"><use href="#i-x"/></svg></button>
+    <img alt="">
+  </dialog>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
